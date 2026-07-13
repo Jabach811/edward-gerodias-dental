@@ -86,3 +86,47 @@ test('progressive enhancements preserve fallbacks and accessible state', async (
   assert.match(js, /document\.documentElement\.classList\.add\(['"]js['"]\)/);
   assert.match(js, /catch\s*\(/);
 });
+
+test('page references only approved asset categories and carries demo disclosure', async () => {
+  const html = await read('index.html');
+  assert.doesNotMatch(html, /assets\/source\/reference-only/);
+  assert.match(html, /Concept imagery; not the actual office\./);
+  assert.match(html, /Practice details and image permissions require owner review before publication\./);
+  assert.doesNotMatch(html, /best dentist|pain[- ]free|guarantee|board[- ]certified/i);
+});
+
+test('all local HTML and CSS asset references resolve', async () => {
+  const html = await read('index.html');
+  const css = await read('styles.css');
+  const htmlPaths = [...html.matchAll(/(?:src|href)="(?!https?:|tel:|#)([^"?]+)"/g)].map((match) => match[1]);
+  const cssPaths = [...css.matchAll(/url\(['"]?(?!data:|https?:)([^)'"?]+)['"]?\)/g)].map((match) => match[1]);
+  const paths = [...new Set([...htmlPaths, ...cssPaths])];
+  for (const path of paths) {
+    await readFile(new URL(path, root));
+  }
+  assert.doesNotMatch(css, /https?:\/\//);
+});
+
+test('project documentation preserves privacy and owner-review gates', async () => {
+  const readme = await read('README.md');
+  assert.match(readme, /Owner confirmation before publication/);
+  assert.match(readme, /contains no custom patient form/);
+  assert.match(readme, /assets\/source\/reference-only/);
+  assert.match(readme, /python -m http\.server 4173/);
+});
+
+test('interface includes reviewed navigation, font, image, and touch guardrails', async () => {
+  const html = await read('index.html');
+  const css = await read('styles.css');
+  assert.match(html, /rel="preload" href="assets\/fonts\/newsreader-400\.ttf" as="font"/);
+  assert.match(html, /dr-edward-gerodias-scheduler\.png"[^>]+loading="lazy"/);
+  assert.match(css, /scroll-margin-top:\s*90px/);
+  assert.match(css, /touch-action:\s*manipulation/);
+  assert.match(css, /font-variant-numeric:\s*tabular-nums/);
+});
+
+test('decorative review imagery stays inside the page canvas', async () => {
+  const css = await read('styles.css');
+  assert.match(css, /\.hero-art::before\s*\{[^}]*right:\s*0;/s);
+  assert.match(css, /\.voices-section::after\s*\{[^}]*right:\s*0;/s);
+});

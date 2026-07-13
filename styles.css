@@ -85,6 +85,17 @@ a {
   color: inherit;
 }
 
+a,
+button,
+summary {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(201, 111, 93, .18);
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -229,6 +240,10 @@ h1 em {
   text-transform: uppercase;
 }
 
+.wordmark:hover span {
+  color: var(--coral);
+}
+
 [data-nav] {
   display: flex;
   align-items: center;
@@ -271,6 +286,11 @@ h1 em {
   text-decoration: none;
 }
 
+.header-call:hover,
+.button-primary:hover {
+  background: #24445d;
+}
+
 .hero {
   width: min(calc(100% - 40px), var(--max));
   min-height: calc(100svh - 78px);
@@ -307,7 +327,7 @@ h1 em {
   width: 70%;
   aspect-ratio: 1;
   top: -8%;
-  right: -8%;
+  right: 0;
   border: 1px solid var(--brass);
   border-radius: 50%;
 }
@@ -343,6 +363,7 @@ h1 em {
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 400;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .trust-score span {
@@ -512,7 +533,7 @@ h1 em {
   z-index: -1;
   width: min(42vw, 560px);
   height: 68%;
-  right: -8vw;
+  right: 0;
   bottom: 5%;
   border-radius: var(--radius) 0 0 var(--radius);
   background: linear-gradient(90deg, var(--ivory), transparent), url('assets/optimized/waiting-room-cadence.webp') center / cover no-repeat;
@@ -561,6 +582,10 @@ h1 em {
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: .35em;
+}
+
+.text-link:hover {
+  color: var(--coral);
 }
 
 .questions-section {
