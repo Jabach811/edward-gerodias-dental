@@ -63,3 +63,15 @@ test('page exposes semantic sections and reliable conversion actions', async () 
   assert.match(html, /skip-link/);
   assert.doesNotMatch(html, /<form\b/i);
 });
+
+test('styles include approved tokens, responsive rules, focus, and reduced motion', async () => {
+  const css = await read('styles.css');
+  for (const token of ['--ivory', '--navy', '--porcelain', '--brass', '--coral']) {
+    assert.match(css, new RegExp(token));
+  }
+  assert.match(css, /@media\s*\(max-width:\s*900px\)/);
+  assert.match(css, /@media\s*\(max-width:\s*640px\)/);
+  assert.match(css, /:focus-visible/);
+  assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.doesNotMatch(css, /overflow-x:\s*hidden/);
+});
