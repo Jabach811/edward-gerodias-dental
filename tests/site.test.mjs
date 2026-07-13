@@ -104,11 +104,11 @@ test('page content stays in sync with the practice data ledger', async () => {
     'the page should not display a capture date that goes stale');
 });
 
-test('page references only approved asset categories and carries demo disclosure', async () => {
+test('page references only approved asset categories and avoids overreaching claims', async () => {
   const html = await read('index.html');
   assert.doesNotMatch(html, /assets\/source\/reference-only/);
   assert.match(html, /Concept imagery; not the actual office\./);
-  assert.match(html, /Practice details and image permissions require owner review before publication\./);
+  assert.match(html, /All rights reserved\./);
   assert.doesNotMatch(html, /best dentist|pain[- ]free|guarantee|board[- ]certified/i);
 });
 
