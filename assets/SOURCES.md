@@ -18,7 +18,7 @@ Capture date: 2026-07-13
 - Source: https://s.yimg.com/bj/4ec1/4ec12c7b6a7535083f854c9b8e2c2e59.jpg
 - Context: Image associated with the Yahoo Local practice listing
 - Apparent owner: Unclear from the listing
-- Status: Reference only; excluded from the website until rights are confirmed
+- Status: Reference only; excluded from this public repository and the website until rights are confirmed. The research copy remains only in the local project archive.
 
 ## Locally hosted fonts
 

@@ -21,7 +21,7 @@ node --test tests/*.test.mjs
 ## Asset policy
 
 - `assets/source/publish-candidate/` contains apparent practice-owned material that still requires owner approval before public use.
-- `assets/source/reference-only/` is research material and must never be referenced by the public page.
+- `assets/source/reference-only/` is local research material and is intentionally excluded from this public repository and the public page.
 - `assets/generated/` contains original fictional or abstract imagery.
 - `assets/optimized/` contains the compressed generated imagery used by the page.
 - `assets/fonts/` contains locally hosted font files and their SIL Open Font License text.
