@@ -1,34 +1,34 @@
 @font-face {
   font-family: 'DM Sans';
-  src: url('assets/fonts/dm-sans-400.ttf') format('truetype');
+  src: url('assets/fonts/dm-sans-400.woff2') format('woff2'), url('assets/fonts/dm-sans-400.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('assets/fonts/dm-sans-500.ttf') format('truetype');
+  src: url('assets/fonts/dm-sans-500.woff2') format('woff2'), url('assets/fonts/dm-sans-500.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('assets/fonts/dm-sans-600.ttf') format('truetype');
+  src: url('assets/fonts/dm-sans-600.woff2') format('woff2'), url('assets/fonts/dm-sans-600.ttf') format('truetype');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Newsreader';
-  src: url('assets/fonts/newsreader-400.ttf') format('truetype');
+  src: url('assets/fonts/newsreader-400.woff2') format('woff2'), url('assets/fonts/newsreader-400.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Newsreader';
-  src: url('assets/fonts/newsreader-500.ttf') format('truetype');
+  src: url('assets/fonts/newsreader-500.woff2') format('woff2'), url('assets/fonts/newsreader-500.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
@@ -402,11 +402,11 @@ h1 em {
 }
 
 .care-card:nth-child(1),
-.care-card:nth-child(5) {
+.care-card-feature {
   grid-column: span 6;
 }
 
-.care-card:nth-child(5) {
+.care-card-feature {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -414,7 +414,7 @@ h1 em {
   background: var(--navy) url('assets/optimized/instruments-still-life.webp') center / cover no-repeat;
 }
 
-.care-card:nth-child(5)::before {
+.care-card-feature::before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -442,7 +442,7 @@ h1 em {
   color: var(--muted);
 }
 
-.care-card:nth-child(5) p {
+.care-card-feature p {
   color: rgba(255, 255, 255, .78);
 }
 
@@ -760,7 +760,7 @@ footer p {
 
   .care-card,
   .care-card:nth-child(1),
-  .care-card:nth-child(5) {
+  .care-card-feature {
     grid-column: span 6;
   }
 
@@ -800,12 +800,11 @@ footer p {
     height: 46px;
     padding: 0;
     justify-content: center;
-    font-size: 0;
+    font-size: .78rem;
   }
 
-  .header-call::after {
-    content: 'Call';
-    font-size: .78rem;
+  .header-call-number {
+    display: none;
   }
 
   .section,
@@ -834,7 +833,7 @@ footer p {
 
   .care-card,
   .care-card:nth-child(1),
-  .care-card:nth-child(5) {
+  .care-card-feature {
     min-height: 240px;
     grid-column: 1 / -1;
   }

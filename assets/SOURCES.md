@@ -25,14 +25,14 @@ Capture date: 2026-07-13
 ### DM Sans
 
 - Source: https://fonts.google.com/specimen/DM+Sans
-- Files: `dm-sans-400.ttf`, `dm-sans-500.ttf`, `dm-sans-600.ttf`
+- Files: `dm-sans-400.ttf`, `dm-sans-500.ttf`, `dm-sans-600.ttf`, plus `.woff2` versions converted locally with fontTools
 - License: SIL Open Font License; full text in `assets/fonts/LICENSE-DM-SANS.txt`
 - Status: Cleared for local embedding under the included license
 
 ### Newsreader
 
 - Source: https://fonts.google.com/specimen/Newsreader
-- Files: `newsreader-400.ttf`, `newsreader-500.ttf`
+- Files: `newsreader-400.ttf`, `newsreader-500.ttf`, plus `.woff2` versions converted locally with fontTools
 - License: SIL Open Font License; full text in `assets/fonts/LICENSE-NEWSREADER.txt`
 - Status: Cleared for local embedding under the included license
 
@@ -43,5 +43,6 @@ Capture date: 2026-07-13
 - `instruments-still-life.png` — built-in image generation; fictional editorial still life
 - `waiting-room-cadence.png` — built-in image generation; fictional environment; not the real practice
 - `smile-light-texture.png` — built-in image generation; abstract background texture
+- `favicon.svg`, `apple-touch-icon.png` — original marks drawn locally from the site's brand tokens and the licensed Newsreader font
 
 Generated on 2026-07-13. Final prompts are preserved in the implementation plan.
