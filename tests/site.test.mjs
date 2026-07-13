@@ -36,3 +36,18 @@ test('source assets exist and provenance records their usage status', async () =
   assert.match(sources, /DM Sans[\s\S]+SIL Open Font License/);
   assert.match(sources, /Newsreader[\s\S]+SIL Open Font License/);
 });
+
+test('optimized original assets are present and page-sized', async () => {
+  const names = [
+    'hero-welcome.webp',
+    'care-chair-detail.webp',
+    'instruments-still-life.webp',
+    'waiting-room-cadence.webp',
+    'smile-light-texture.webp'
+  ];
+  for (const name of names) {
+    const image = await readFile(new URL(`assets/optimized/${name}`, root));
+    assert.ok(image.length > 20_000, `${name} should be a real optimized image`);
+    assert.equal(image.subarray(8, 12).toString('ascii'), 'WEBP');
+  }
+});

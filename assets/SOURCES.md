@@ -35,3 +35,13 @@ Capture date: 2026-07-13
 - Files: `newsreader-400.ttf`, `newsreader-500.ttf`
 - License: SIL Open Font License; full text in `assets/fonts/LICENSE-NEWSREADER.txt`
 - Status: Cleared for local embedding under the included license
+
+## Generated originals
+
+- `hero-welcome.png` — built-in image generation; fictional environment; not the real practice
+- `care-chair-detail.png` — built-in image generation; fictional operatory detail
+- `instruments-still-life.png` — built-in image generation; fictional editorial still life
+- `waiting-room-cadence.png` — built-in image generation; fictional environment; not the real practice
+- `smile-light-texture.png` — built-in image generation; abstract background texture
+
+Generated on 2026-07-13. Final prompts are preserved in the implementation plan.
