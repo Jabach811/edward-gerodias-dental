@@ -365,7 +365,7 @@ h1 em {
 .care-row {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 17rem) 1fr;
-  align-items: center;
+  align-items: start;
   column-gap: clamp(1.5rem, 4vw, 3rem);
   padding: clamp(1.5rem, 3vw, 2.2rem) 0;
   border-bottom: 1px solid var(--line);
@@ -377,9 +377,11 @@ h1 em {
 }
 
 .care-index {
+  margin-top: .3em;
   color: var(--coral);
   font-family: var(--serif);
   font-size: 1.15rem;
+  line-height: 1.05;
   font-variant-numeric: tabular-nums;
 }
 
@@ -392,9 +394,42 @@ h1 em {
 }
 
 .care-row p {
-  margin: 0;
+  margin: .55em 0 0;
   max-width: 34rem;
   color: var(--muted);
+}
+
+.care-photo {
+  position: relative;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+}
+
+.care-photo::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 20%;
+  aspect-ratio: 1;
+  bottom: -10%;
+  left: -4%;
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  opacity: .45;
+}
+
+.care-photo img {
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(19, 40, 58, .12);
+}
+
+.care-photo figcaption {
+  margin-top: .7rem;
+  color: var(--muted);
+  font-size: .8rem;
+  text-align: right;
 }
 
 .doctor-section {
@@ -482,13 +517,14 @@ h1 em {
   content: '';
   position: absolute;
   z-index: -1;
-  width: min(30vw, 420px);
-  height: 55%;
+  width: min(15vw, 190px);
+  aspect-ratio: 1;
+  top: -2%;
   right: 0;
-  bottom: 10%;
+  bottom: auto;
   border: 1px solid var(--brass);
-  border-radius: var(--radius) 0 0 var(--radius);
-  opacity: .4;
+  border-radius: 50%;
+  opacity: .35;
 }
 
 .voices-rating {
@@ -515,6 +551,8 @@ h1 em {
 }
 
 .voice-grid blockquote {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: clamp(1.5rem, 3vw, 3rem);
   border-right: 1px solid var(--line);
@@ -533,6 +571,7 @@ h1 em {
 }
 
 .voice-grid cite {
+  margin-top: auto;
   color: var(--muted);
   font-size: .78rem;
   font-style: normal;
@@ -840,7 +879,7 @@ footer p {
   }
 
   .care-row p {
-    grid-column: 1 / -1;
+    grid-column: 2;
     max-width: none;
   }
 
