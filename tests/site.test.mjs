@@ -51,3 +51,15 @@ test('optimized original assets are present and page-sized', async () => {
     assert.equal(image.subarray(8, 12).toString('ascii'), 'WEBP');
   }
 });
+
+test('page exposes semantic sections and reliable conversion actions', async () => {
+  const html = await read('index.html');
+  for (const id of ['home', 'care', 'doctor', 'comfort', 'voices', 'questions', 'visit']) {
+    assert.match(html, new RegExp(`id=["']${id}["']`));
+  }
+  assert.match(html, /href="tel:\+12095264244"/);
+  assert.match(html, /schedule\.solutionreach\.com\/scheduling\/subscriber\/48415\/scheduler-basic/);
+  assert.match(html, /application\/ld\+json/);
+  assert.match(html, /skip-link/);
+  assert.doesNotMatch(html, /<form\b/i);
+});
