@@ -75,3 +75,14 @@ test('styles include approved tokens, responsive rules, focus, and reduced motio
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.doesNotMatch(css, /overflow-x:\s*hidden/);
 });
+
+test('progressive enhancements preserve fallbacks and accessible state', async () => {
+  const html = await read('index.html');
+  const js = await read('script.js');
+  assert.match(html, /data-services>[\s\S]*New-patient exams/);
+  assert.match(js, /fetch\(['"]data\/practice\.json['"]\)/);
+  assert.match(js, /aria-expanded/);
+  assert.match(js, /IntersectionObserver/);
+  assert.match(js, /document\.documentElement\.classList\.add\(['"]js['"]\)/);
+  assert.match(js, /catch\s*\(/);
+});
