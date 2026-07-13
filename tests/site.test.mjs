@@ -99,13 +99,9 @@ test('page content stays in sync with the practice data ledger', async () => {
   assert.ok(html.includes(`${data.contact.address.city}, ${data.contact.address.state} ${data.contact.address.zip}`));
   assert.ok(html.includes(data.appointments.url), 'scheduler URL should match the ledger');
 
-  const months = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'];
-  const [year, month, day] = data.reviews.captureDate.split('-').map(Number);
-  const longDate = `${months[month - 1]} ${day}, ${year}`;
   assert.ok(html.includes(`<strong>${data.reviews.average}</strong>`), 'review average should match the ledger');
-  assert.ok(html.includes(`from ${data.reviews.count} scheduler reviews, captured ${longDate}`),
-    'review count and capture date should match the ledger');
+  assert.doesNotMatch(html, /captured\s+\w+\s+\d{1,2},\s+\d{4}/,
+    'the page should not display a capture date that goes stale');
 });
 
 test('page references only approved asset categories and carries demo disclosure', async () => {

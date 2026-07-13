@@ -38,9 +38,9 @@
   --navy: #13283a;
   --porcelain: #fffdf8;
   --brass: #aa8251;
-  --coral: #c96f5d;
+  --coral: #b04a37;
   --ink: #192329;
-  --muted: #667079;
+  --muted: #565f68;
   --line: rgba(19, 40, 58, .16);
   --serif: 'Newsreader', Georgia, serif;
   --sans: 'DM Sans', 'Segoe UI', sans-serif;
@@ -347,39 +347,6 @@ h1 em {
   text-align: right;
 }
 
-.trust-score {
-  display: grid;
-  grid-template-columns: auto minmax(180px, 1fr) auto;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.25rem max(20px, calc((100vw - var(--max)) / 2));
-  background: var(--navy);
-  color: var(--porcelain);
-}
-
-.trust-score strong {
-  color: var(--brass);
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  font-weight: 400;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
-.trust-score span {
-  max-width: 26rem;
-  color: rgba(255, 255, 255, .72);
-  font-size: .84rem;
-}
-
-.trust-score a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  text-underline-offset: .3em;
-}
-
 .care-section > h2 {
   max-width: 880px;
 }
@@ -391,17 +358,16 @@ h1 em {
 }
 
 .care-card {
-  min-height: 280px;
   grid-column: span 4;
   display: flex;
   flex-direction: column;
-  padding: clamp(1.4rem, 2.5vw, 2.4rem);
+  padding: clamp(1.4rem, 2.5vw, 2.2rem);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 253, 248, .72);
 }
 
-.care-card:nth-child(1),
+.care-card:nth-child(4),
 .care-card-feature {
   grid-column: span 6;
 }
@@ -410,8 +376,13 @@ h1 em {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  min-height: 260px;
   color: white;
   background: var(--navy) url('assets/optimized/instruments-still-life.webp') center / cover no-repeat;
+}
+
+.care-card-feature h3 {
+  margin-top: auto;
 }
 
 .care-card-feature::before {
@@ -430,9 +401,9 @@ h1 em {
 }
 
 .care-card h3 {
-  margin: auto 0 .75rem;
+  margin: .9rem 0 .6rem;
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
   font-weight: 400;
   line-height: 1.05;
 }
@@ -444,6 +415,10 @@ h1 em {
 
 .care-card-feature p {
   color: rgba(255, 255, 255, .78);
+}
+
+.care-card-feature span {
+  color: #e7a894;
 }
 
 .doctor-section {
@@ -537,7 +512,22 @@ h1 em {
   bottom: 5%;
   border-radius: var(--radius) 0 0 var(--radius);
   background: linear-gradient(90deg, var(--ivory), transparent), url('assets/optimized/waiting-room-cadence.webp') center / cover no-repeat;
-  opacity: .3;
+  opacity: .2;
+}
+
+.voices-rating {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.voices-rating strong {
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 1.7em;
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .voice-grid {
@@ -661,13 +651,14 @@ h1 em {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: end;
+  align-items: center;
   gap: 3rem;
   margin-bottom: clamp(2rem, 5vw, 5rem);
   padding-inline: clamp(1.5rem, 5vw, 5rem);
-  border: 1px solid rgba(201, 111, 93, .24);
+  border: 1px solid var(--line);
   border-radius: calc(var(--radius) * 1.5);
-  background: rgba(255, 253, 248, .85) url('assets/optimized/smile-light-texture.webp') right center / auto 100% no-repeat;
+  background: var(--porcelain);
+  box-shadow: 0 24px 60px rgba(19, 40, 58, .08);
 }
 
 .visit-section h2 {
@@ -709,7 +700,7 @@ footer p {
 
 .demo-note {
   max-width: 620px;
-  color: rgba(255, 255, 255, .62);
+  color: rgba(255, 255, 255, .78);
   font-size: .76rem;
   text-align: right;
 }
@@ -759,9 +750,12 @@ footer p {
   }
 
   .care-card,
-  .care-card:nth-child(1),
-  .care-card-feature {
+  .care-card:nth-child(4) {
     grid-column: span 6;
+  }
+
+  .care-card-feature {
+    grid-column: 1 / -1;
   }
 
   .doctor-section {
@@ -822,19 +816,9 @@ footer p {
     flex-direction: column;
   }
 
-  .trust-score {
-    grid-template-columns: auto 1fr;
-    padding-inline: 14px;
-  }
-
-  .trust-score a {
-    grid-column: 1 / -1;
-  }
-
   .care-card,
-  .care-card:nth-child(1),
+  .care-card:nth-child(4),
   .care-card-feature {
-    min-height: 240px;
     grid-column: 1 / -1;
   }
 
