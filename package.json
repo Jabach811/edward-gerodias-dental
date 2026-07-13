@@ -1,0 +1,7 @@
+{
+  "name": "edward-gerodias-dental-site",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

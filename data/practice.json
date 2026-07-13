@@ -1,0 +1,53 @@
+{
+  "identity": {
+    "name": "Edward S. Gerodias, D.M.D.",
+    "shortName": "Dr. Edward Gerodias",
+    "descriptor": "Family & General Dentistry in Modesto"
+  },
+  "contact": {
+    "phoneDisplay": "(209) 526-4244",
+    "phoneHref": "tel:+12095264244",
+    "faxDisplay": "(209) 526-0112",
+    "address": {
+      "street": "220 Standiford Ave Ste B",
+      "city": "Modesto",
+      "state": "CA",
+      "zip": "95350",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=220%20Standiford%20Ave%20Ste%20B%20Modesto%20CA%2095350"
+    }
+  },
+  "appointments": {
+    "url": "https://schedule.solutionreach.com/scheduling/subscriber/48415/scheduler-basic",
+    "label": "Request an appointment"
+  },
+  "reviews": {
+    "average": 4.98,
+    "count": 448,
+    "captureDate": "2026-07-13",
+    "sourceUrl": "https://schedule.solutionreach.com/scheduling/subscriber/48415/scheduler-basic"
+  },
+  "services": [
+    {"name": "New-patient exams", "confirmedBy": "public scheduler"},
+    {"name": "Cleanings and preventive care", "confirmedBy": "public scheduler"},
+    {"name": "Fillings", "confirmedBy": "public scheduler"},
+    {"name": "Crowns", "confirmedBy": "public scheduler"},
+    {"name": "Orthodontics", "confirmedBy": "public scheduler"}
+  ],
+  "languages": [
+    {"name": "English", "confirmationRequired": true},
+    {"name": "Spanish", "confirmationRequired": true},
+    {"name": "Tagalog", "confirmationRequired": true}
+  ],
+  "story": {
+    "education": "University of the East Ramon Magsaysay Memorial Medical Center",
+    "community": "Public profiles describe volunteer dentistry through CDA Cares.",
+    "music": "Public profiles describe longtime service as a church pianist and organist."
+  },
+  "verification": {
+    "hours": "owner confirmation required",
+    "insurance": "owner confirmation required",
+    "languages": "owner confirmation required",
+    "portraitUsage": "owner approval required before publication",
+    "reviewQuotes": "direct quotation permission required before publication"
+  }
+}
