@@ -22,7 +22,10 @@ test('practice data contains verified core contact details', async () => {
 
 test('source assets exist and provenance records their usage status', async () => {
   const portrait = await readFile(new URL('assets/source/publish-candidate/dr-edward-gerodias-scheduler.png', root));
-  const fontNames = ['dm-sans-400.ttf', 'dm-sans-500.ttf', 'dm-sans-600.ttf', 'newsreader-400.ttf', 'newsreader-500.ttf'];
+  const fontNames = [
+    'dm-sans-400.ttf', 'dm-sans-500.ttf', 'dm-sans-600.ttf', 'newsreader-400.ttf', 'newsreader-500.ttf',
+    'dm-sans-400.woff2', 'dm-sans-500.woff2', 'dm-sans-600.woff2', 'newsreader-400.woff2', 'newsreader-500.woff2'
+  ];
   const sources = await read('assets/SOURCES.md');
   assert.equal(portrait.subarray(1, 4).toString('ascii'), 'PNG');
   for (const fontName of fontNames) {
@@ -75,14 +78,34 @@ test('styles include approved tokens, responsive rules, focus, and reduced motio
 });
 
 test('progressive enhancements preserve fallbacks and accessible state', async () => {
-  const html = await read('index.html');
   const js = await read('script.js');
-  assert.match(html, /data-services>[\s\S]*New-patient exams/);
-  assert.match(js, /fetch\(['"]data\/practice\.json['"]\)/);
   assert.match(js, /aria-expanded/);
   assert.match(js, /IntersectionObserver/);
   assert.match(js, /document\.documentElement\.classList\.add\(['"]js['"]\)/);
-  assert.match(js, /catch\s*\(/);
+  assert.doesNotMatch(js, /innerHTML/, 'script should not re-render page content at runtime');
+});
+
+test('page content stays in sync with the practice data ledger', async () => {
+  const html = await read('index.html');
+  const data = JSON.parse(await read('data/practice.json'));
+
+  for (const service of data.services) {
+    assert.match(html, new RegExp(`<h3>${service.name}</h3>`), `service "${service.name}" should appear on the page`);
+  }
+
+  assert.ok(html.includes(`href="${data.contact.phoneHref}"`), 'phone link should match the ledger');
+  assert.ok(html.includes(data.contact.phoneDisplay), 'display phone number should match the ledger');
+  assert.ok(html.includes(data.contact.address.street), 'street address should match the ledger');
+  assert.ok(html.includes(`${data.contact.address.city}, ${data.contact.address.state} ${data.contact.address.zip}`));
+  assert.ok(html.includes(data.appointments.url), 'scheduler URL should match the ledger');
+
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+  const [year, month, day] = data.reviews.captureDate.split('-').map(Number);
+  const longDate = `${months[month - 1]} ${day}, ${year}`;
+  assert.ok(html.includes(`<strong>${data.reviews.average}</strong>`), 'review average should match the ledger');
+  assert.ok(html.includes(`from ${data.reviews.count} scheduler reviews, captured ${longDate}`),
+    'review count and capture date should match the ledger');
 });
 
 test('page references only approved asset categories and carries demo disclosure', async () => {
@@ -116,7 +139,10 @@ test('project documentation preserves privacy and owner-review gates', async () 
 test('interface includes reviewed navigation, font, image, and touch guardrails', async () => {
   const html = await read('index.html');
   const css = await read('styles.css');
-  assert.match(html, /rel="preload" href="assets\/fonts\/newsreader-400\.ttf" as="font"/);
+  assert.match(html, /rel="preload" href="assets\/fonts\/newsreader-400\.woff2" as="font"/);
+  assert.match(html, /rel="icon" href="assets\/favicon\.svg"/);
+  assert.match(html, /property="og:title"/);
+  assert.match(html, /srcset="assets\/optimized\/hero-welcome-640\.webp 640w/);
   assert.match(html, /dr-edward-gerodias-scheduler\.png"[^>]+loading="lazy"/);
   assert.match(css, /scroll-margin-top:\s*90px/);
   assert.match(css, /touch-action:\s*manipulation/);

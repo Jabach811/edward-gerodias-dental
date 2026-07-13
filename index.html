@@ -6,16 +6,30 @@
   <title>Edward S. Gerodias, D.M.D. | Family Dentistry in Modesto</title>
   <meta name="description" content="Warm, experienced family dentistry in Modesto from Dr. Edward Gerodias and his caring team.">
   <meta name="theme-color" content="#13283a">
-  <link rel="preload" href="assets/fonts/newsreader-400.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/fonts/dm-sans-400.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" as="image" href="assets/optimized/hero-welcome.webp" fetchpriority="high">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Edward S. Gerodias, D.M.D. | Family Dentistry in Modesto">
+  <meta property="og:description" content="Warm, experienced family dentistry in Modesto from Dr. Edward Gerodias and his caring team.">
+  <meta property="og:image" content="assets/optimized/hero-welcome.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/newsreader-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/optimized/hero-welcome.webp"
+    imagesrcset="assets/optimized/hero-welcome-640.webp 640w, assets/optimized/hero-welcome-1024.webp 1024w, assets/optimized/hero-welcome.webp 1536w"
+    imagesizes="(max-width: 640px) calc(100vw - 28px), (max-width: 900px) calc(100vw - 40px), (max-width: 1280px) 44vw, 560px"
+    fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "Edward S. Gerodias, D.M.D.",
+    "image": "assets/source/publish-candidate/dr-edward-gerodias-scheduler.png",
     "telephone": "+1-209-526-4244",
+    "faxNumber": "+1-209-526-0112",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=220%20Standiford%20Ave%20Ste%20B%20Modesto%20CA%2095350",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "220 Standiford Ave Ste B",
@@ -47,7 +61,7 @@
       <a href="#questions">Questions</a>
       <a href="#visit">Visit</a>
     </nav>
-    <a class="header-call" href="tel:+12095264244">Call (209) 526-4244</a>
+    <a class="header-call" href="tel:+12095264244" aria-label="Call (209) 526-4244">Call<span class="header-call-number">&nbsp;(209) 526-4244</span></a>
   </header>
 
   <main id="main">
@@ -62,7 +76,10 @@
         </div>
       </div>
       <figure class="hero-art" data-reveal>
-        <img src="assets/optimized/hero-welcome.webp" alt="An elegant, welcoming dental reception concept" width="1536" height="1024">
+        <img src="assets/optimized/hero-welcome.webp"
+          srcset="assets/optimized/hero-welcome-640.webp 640w, assets/optimized/hero-welcome-1024.webp 1024w, assets/optimized/hero-welcome.webp 1536w"
+          sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 900px) calc(100vw - 40px), (max-width: 1280px) 44vw, 560px"
+          alt="An elegant, welcoming dental reception concept" width="1536" height="1024" fetchpriority="high">
         <figcaption>Concept imagery; not the actual office.</figcaption>
       </figure>
     </section>
@@ -76,29 +93,29 @@
     <section id="care" class="section care-section">
       <p class="eyebrow">Care that makes sense</p>
       <h2>Clear answers. Gentle hands. No mystery.</h2>
-      <div class="care-grid" data-services>
+      <div class="care-grid">
         <article class="care-card">
-          <span>01</span>
+          <span aria-hidden="true">01</span>
           <h3>New-patient exams</h3>
           <p>A clear first visit, careful evaluation, cleaning, and appropriate imaging.</p>
         </article>
         <article class="care-card">
-          <span>02</span>
-          <h3>Preventive care</h3>
-          <p>Consistent cleanings and practical guidance for long-term oral health.</p>
+          <span aria-hidden="true">02</span>
+          <h3>Cleanings and preventive care</h3>
+          <p>Consistent care and practical guidance for long-term oral health.</p>
         </article>
         <article class="care-card">
-          <span>03</span>
+          <span aria-hidden="true">03</span>
           <h3>Fillings</h3>
           <p>Thoughtful restorative care with comfort and communication in the room.</p>
         </article>
         <article class="care-card">
-          <span>04</span>
+          <span aria-hidden="true">04</span>
           <h3>Crowns</h3>
           <p>Careful restoration planning designed around function, fit, and appearance.</p>
         </article>
-        <article class="care-card">
-          <span>05</span>
+        <article class="care-card care-card-feature">
+          <span aria-hidden="true">05</span>
           <h3>Orthodontics</h3>
           <p>Smile-alignment care listed through the practice's public scheduler.</p>
         </article>
@@ -127,7 +144,10 @@
           <li>Families see familiar people who know their history.</li>
         </ul>
       </div>
-      <img src="assets/optimized/care-chair-detail.webp" alt="A modern dental treatment chair in a calm operatory concept" loading="lazy" width="1536" height="1024">
+      <img src="assets/optimized/care-chair-detail.webp"
+        srcset="assets/optimized/care-chair-detail-640.webp 640w, assets/optimized/care-chair-detail-1024.webp 1024w, assets/optimized/care-chair-detail.webp 1536w"
+        sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 900px) calc(100vw - 40px), 640px"
+        alt="A modern dental treatment chair in a calm operatory concept" loading="lazy" width="1536" height="1024">
     </section>
 
     <section id="voices" class="section voices-section">

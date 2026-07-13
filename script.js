@@ -26,43 +26,6 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  "'": '&#39;'
-}[character]));
-
-const serviceDescriptions = {
-  'New-patient exams': 'A clear first visit, careful evaluation, cleaning, and appropriate imaging.',
-  'Cleanings and preventive care': 'Consistent care and practical guidance for long-term oral health.',
-  'Fillings': 'Thoughtful restorative care with comfort and communication in the room.',
-  'Crowns': 'Careful restoration planning designed around function, fit, and appearance.',
-  'Orthodontics': 'Smile-alignment care listed through the practice’s public scheduler.'
-};
-
-const renderServices = (services) => services.map((service, index) => `
-  <article class="care-card">
-    <span>${String(index + 1).padStart(2, '0')}</span>
-    <h3>${escape(service.name)}</h3>
-    <p>${escape(serviceDescriptions[service.name] || 'Call the office to ask how this care fits your needs.')}</p>
-  </article>
-`).join('');
-
-fetch('data/practice.json')
-  .then((response) => {
-    if (!response.ok) throw new Error(`Practice data returned ${response.status}`);
-    return response.json();
-  })
-  .then((practice) => {
-    const services = document.querySelector('[data-services]');
-    if (services && Array.isArray(practice.services)) {
-      services.innerHTML = renderServices(practice.services);
-    }
-  })
-  .catch((error) => console.info('Using embedded practice content.', error.message));
-
 const revealItems = document.querySelectorAll('[data-reveal]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
