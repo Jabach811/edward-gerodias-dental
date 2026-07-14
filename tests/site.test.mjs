@@ -138,7 +138,7 @@ test('interface includes reviewed navigation, font, image, and touch guardrails'
   assert.match(html, /rel="preload" href="assets\/fonts\/newsreader-400\.woff2" as="font"/);
   assert.match(html, /rel="icon" href="assets\/favicon\.svg"/);
   assert.match(html, /property="og:title"/);
-  assert.match(html, /srcset="assets\/optimized\/hero-welcome-640\.webp 640w/);
+  assert.match(html, /srcset="assets\/optimized\/doctor-portrait-480\.webp 480w/);
   assert.doesNotMatch(html, /dr-edward-gerodias-scheduler\.png"[^>]+loading="lazy"/,
     'the doctor portrait is primary content and should not be deferred with loading="lazy"');
   assert.match(html, /assets\/optimized\/waiting-room-cadence\.webp"[^>]+loading="lazy"/);
