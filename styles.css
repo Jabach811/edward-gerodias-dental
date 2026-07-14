@@ -163,7 +163,7 @@ h2 {
 }
 
 h1 em {
-  color: var(--brass);
+  color: var(--brass-text);
   font-weight: 400;
 }
 
@@ -366,11 +366,12 @@ h1 em {
   box-shadow: 0 30px 70px rgba(19, 40, 58, .16);
 }
 
-.hero-art figcaption {
-  margin-top: .7rem;
+.hero-art figcaption,
+.care-photo figcaption {
+  margin-top: 1rem;
   color: var(--muted);
-  font-size: .8rem;
-  text-align: right;
+  font-size: .78rem;
+  text-align: left;
 }
 
 .care-section > h2 {
@@ -401,7 +402,7 @@ h1 em {
 }
 
 .care-row:hover {
-  background: rgba(255, 253, 248, .55);
+  background: rgba(19, 40, 58, .05);
 }
 
 .care-index {
@@ -433,11 +434,15 @@ h1 em {
   align-items: center;
   gap: .4rem;
   justify-self: end;
+  padding: .55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   color: var(--navy);
-  font-size: .82rem;
+  font-size: .9rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
 
 .care-request svg {
@@ -446,6 +451,8 @@ h1 em {
 }
 
 .care-request:hover {
+  border-color: var(--coral);
+  background: rgba(176, 74, 55, .08);
   color: var(--coral);
 }
 
@@ -477,13 +484,6 @@ h1 em {
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: 0 24px 60px rgba(19, 40, 58, .12);
-}
-
-.care-photo figcaption {
-  margin-top: .7rem;
-  color: var(--muted);
-  font-size: .8rem;
-  text-align: right;
 }
 
 .doctor-section {
@@ -670,6 +670,7 @@ h1 em {
   grid-template-columns: minmax(260px, .8fr) 1.2fr;
   align-items: center;
   column-gap: clamp(2rem, 7vw, 7rem);
+  padding-top: calc(clamp(4.5rem, 7vw, 7rem) - 1.5rem);
 }
 
 .questions-intro {
@@ -999,6 +1000,24 @@ footer p {
   .visit-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .hero-actions .button-quiet {
+    align-self: flex-start;
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: .6rem 0;
+    border: 0;
+    background: none;
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .3em;
+  }
+
+  .hero-actions .button-quiet:hover {
+    color: var(--coral);
+    transform: none;
   }
 
   .care-row {
