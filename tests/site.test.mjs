@@ -32,7 +32,7 @@ test('source assets exist and provenance records their usage status', async () =
     const font = await readFile(new URL(`assets/fonts/${fontName}`, root));
     assert.ok(font.length > 10_000, `${fontName} should contain a complete font`);
   }
-  assert.match(sources, /dr-edward-gerodias-scheduler\.png[\s\S]+Publish candidate/);
+  assert.match(sources, /dr-edward-gerodias-scheduler\.png[\s\S]+Approved for use on the public practice website on 2026-07-13/);
   assert.match(sources, /yahoo-practice-banner\.jpg[\s\S]+excluded from this public repository/);
   assert.match(sources, /DM Sans[\s\S]+SIL Open Font License/);
   assert.match(sources, /Newsreader[\s\S]+SIL Open Font License/);
@@ -124,9 +124,10 @@ test('all local HTML and CSS asset references resolve', async () => {
   assert.doesNotMatch(css, /https?:\/\//);
 });
 
-test('project documentation preserves privacy and owner-review gates', async () => {
+test('project documentation records publication approval and remaining content gates', async () => {
   const readme = await read('README.md');
-  assert.match(readme, /Owner confirmation before publication/);
+  assert.match(readme, /approved for public use on 2026-07-13/);
+  assert.match(readme, /remain intentionally omitted until separately confirmed/);
   assert.match(readme, /contains no custom patient form/);
   assert.match(readme, /assets\/source\/reference-only/);
   assert.match(readme, /python -m http\.server 4173/);

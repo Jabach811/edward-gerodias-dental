@@ -1,6 +1,8 @@
-# Edward S. Gerodias Dental Website Concept
+# Edward S. Gerodias Dental Website
 
-Local-only website concept for Edward S. Gerodias, D.M.D. in Modesto, California.
+Public website for Edward S. Gerodias, D.M.D. in Modesto, California.
+
+Live site: https://jabach811.github.io/edward-gerodias-dental/
 
 ## Preview
 
@@ -20,7 +22,7 @@ node --test tests/*.test.mjs
 
 ## Asset policy
 
-- `assets/source/publish-candidate/` contains apparent practice-owned material that still requires owner approval before public use.
+- `assets/source/publish-candidate/` preserves the original review-stage folder name; its provider portrait is now approved for this public site.
 - `assets/source/reference-only/` is local research material and is intentionally excluded from this public repository and the public page.
 - `assets/generated/` contains original fictional or abstract imagery.
 - `assets/optimized/` contains the compressed generated imagery used by the page.
@@ -28,19 +30,18 @@ node --test tests/*.test.mjs
 - `assets/SOURCES.md` is the source-of-truth provenance ledger.
 - `data/practice.json` is the content ledger for practice facts; the test suite fails if the page drifts from it.
 
-## Owner confirmation before publication
+## Publication status
 
-- Confirm preferred practice name and wordmark
-- Confirm office hours
-- Confirm accepted insurance language
-- Confirm English, Spanish, and Tagalog availability
-- Confirm each listed service and preferred terminology
-- Approve portrait use
-- Approve biography and music/community details
-- Approve direct patient quotations if added
-- Confirm scheduler URL and preferred primary conversion action
-- Confirm the production domain, then add a canonical link and switch `og:image` and the JSON-LD `image` to absolute URLs
-- Replace the concept disclaimer after every item above is approved
+The site concept, practice identity, listed services, provider portrait, biography details, scheduler link, and GitHub Pages publication were approved for public use on 2026-07-13.
+
+The following facts remain intentionally omitted until separately confirmed:
+
+- Office hours
+- Accepted insurance language
+- English, Spanish, and Tagalog availability
+- Direct patient quotations
+
+The canonical URL, Open Graph image, and JSON-LD image point to the current GitHub Pages site. Update all three together if the production domain changes.
 
 ## Privacy
 
