@@ -732,38 +732,73 @@ h1 em {
   color: var(--muted);
 }
 
-.visit-section {
+.site-footer {
   position: relative;
   overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6rem) max(20px, calc((100vw - var(--max)) / 2)) 2.4rem;
+  background: var(--navy);
+  color: var(--porcelain);
+}
+
+.footer-ghost {
+  position: absolute;
+  right: clamp(.5rem, 3vw, 2.5rem);
+  bottom: clamp(-.4rem, 1vw, .6rem);
+  z-index: 0;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(6rem, 17vw, 15rem);
+  font-weight: 400;
+  line-height: .8;
+  letter-spacing: -.04em;
+  color: rgba(255, 255, 255, .05);
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-invite,
+.footer-base {
+  position: relative;
+  z-index: 1;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-invite {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 3rem;
-  margin-bottom: clamp(2rem, 5vw, 5rem);
-  padding-inline: clamp(1.5rem, 5vw, 5rem);
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) * 1.5);
-  background: var(--porcelain);
-  box-shadow: 0 24px 60px rgba(19, 40, 58, .08);
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
 }
 
-.visit-section h2 {
-  max-width: 760px;
+.footer-invite .eyebrow {
+  color: #e0947f;
 }
 
-.visit-section address {
-  color: var(--navy);
+.footer-invite h2 {
+  max-width: 12ch;
+  margin: .8rem 0 1.4rem;
+  font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+}
+
+.footer-invite address {
+  color: var(--porcelain);
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.4vw, 2.3rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
   font-style: normal;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
-.visit-section > div:first-child > p:last-child {
-  color: var(--muted);
+.footer-hours {
+  margin-top: .7rem;
+  color: rgba(255, 255, 255, .66);
 }
 
-.visit-actions {
+.footer-invite-actions {
   min-width: min(100%, 260px);
   display: flex;
   flex-direction: column;
@@ -771,23 +806,38 @@ h1 em {
   gap: .8rem;
 }
 
-.site-footer {
-  padding: clamp(3rem, 6vw, 4.5rem) max(20px, calc((100vw - var(--max)) / 2)) 2rem;
-  background: var(--navy);
+.button-ghost {
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: transparent;
   color: var(--porcelain);
 }
 
-.footer-top {
+.button-ghost:hover {
+  background: rgba(255, 255, 255, .08);
+}
+
+.footer-textlink {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, .82);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+}
+
+.footer-textlink:hover {
+  color: var(--brass);
+}
+
+.footer-base {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2.5rem;
-  padding-bottom: 2.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .15);
-}
-
-footer p {
-  margin: 0;
+  align-items: flex-end;
+  gap: 1.5rem 2.5rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .footer-name {
@@ -795,32 +845,10 @@ footer p {
   font-size: 1.4rem;
 }
 
-.footer-brand address {
-  margin-top: .6rem;
-  color: rgba(255, 255, 255, .76);
-  font-style: normal;
-  line-height: 1.5;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem 1.4rem;
-  margin-top: 1rem;
-}
-
-.footer-links a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  color: var(--porcelain);
-  font-weight: 600;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .3em;
-}
-
-.footer-links a:hover {
-  color: var(--brass);
+.demo-note {
+  margin-top: .55rem;
+  color: rgba(255, 255, 255, .55);
+  font-size: .76rem;
 }
 
 .footer-nav {
@@ -842,14 +870,6 @@ footer p {
 
 .footer-nav a:hover {
   color: var(--porcelain);
-}
-
-.demo-note {
-  max-width: 620px;
-  margin-top: 1.5rem;
-  color: rgba(255, 255, 255, .78);
-  font-size: .76rem;
-  text-align: right;
 }
 
 @media (max-width: 900px) {
@@ -915,12 +935,12 @@ footer p {
     align-self: start;
   }
 
-  .visit-section {
+  .footer-invite {
     grid-template-columns: 1fr;
     align-items: start;
   }
 
-  .visit-actions {
+  .footer-invite-actions {
     min-width: 0;
   }
 }
@@ -998,8 +1018,7 @@ footer p {
     min-height: 360px;
   }
 
-  .hero-actions,
-  .visit-actions {
+  .hero-actions {
     align-items: stretch;
     flex-direction: column;
   }
@@ -1076,17 +1095,14 @@ footer p {
     display: none;
   }
 
-  .footer-top {
+  .footer-base {
     flex-direction: column;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 1.8rem;
   }
 
   .footer-nav {
     justify-content: flex-start;
-  }
-
-  .demo-note {
-    text-align: left;
   }
 }
 
