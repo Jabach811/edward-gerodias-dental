@@ -11,6 +11,7 @@ DEST.mkdir(parents=True, exist_ok=True)
 RESPONSIVE_WIDTHS = {
     "hero-welcome": (640, 1024),
     "care-chair-detail": (640, 1024),
+    "doctor-portrait": (480, 768),
 }
 
 

@@ -360,8 +360,10 @@ h1 em {
 
 .hero-art img {
   width: 100%;
+  aspect-ratio: 4 / 5;
   min-height: 560px;
   object-fit: cover;
+  object-position: center 18%;
   border-radius: 48% 48% var(--radius) var(--radius);
   box-shadow: 0 30px 70px rgba(19, 40, 58, .16);
 }

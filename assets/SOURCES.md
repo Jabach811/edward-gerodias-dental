@@ -38,6 +38,7 @@ Capture date: 2026-07-13
 
 ## Generated originals
 
+- `doctor-portrait.png` — generated portrait of Dr. Gerodias (from the hero brainstorm); owner approval required before public launch
 - `hero-welcome.png` — built-in image generation; fictional environment; not the real practice
 - `care-chair-detail.png` — built-in image generation; fictional operatory detail
 - `instruments-still-life.png` — built-in image generation; fictional editorial still life
