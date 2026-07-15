@@ -55,7 +55,7 @@ test('optimized original assets are present and page-sized', async () => {
 
 test('page exposes semantic sections and reliable conversion actions', async () => {
   const html = await read('index.html');
-  for (const id of ['home', 'care', 'doctor', 'comfort', 'voices', 'questions', 'visit']) {
+  for (const id of ['home', 'care', 'doctor', 'comfort', 'team', 'voices', 'questions', 'visit']) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /href="tel:\+12095264244"/);
@@ -139,8 +139,8 @@ test('interface includes reviewed navigation, font, image, and touch guardrails'
   assert.match(html, /rel="icon" href="assets\/favicon\.svg"/);
   assert.match(html, /property="og:title"/);
   assert.match(html, /srcset="assets\/optimized\/doctor-portrait-480\.webp 480w/);
-  assert.doesNotMatch(html, /dr-edward-gerodias-scheduler\.png"[^>]+loading="lazy"/,
-    'the doctor portrait is primary content and should not be deferred with loading="lazy"');
+  assert.doesNotMatch(html, /dr-edward-gerodias-scheduler\.png/,
+    'the page uses a single doctor portrait; the scheduler headshot stays out of the markup');
   assert.match(html, /assets\/optimized\/waiting-room-cadence\.webp"[^>]+loading="lazy"/);
   assert.match(css, /scroll-margin-top:\s*90px/);
   assert.match(css, /touch-action:\s*manipulation/);
@@ -151,4 +151,10 @@ test('decorative review imagery stays inside the page canvas', async () => {
   const css = await read('styles.css');
   assert.match(css, /\.hero-art::before\s*\{[^}]*right:\s*0;/s);
   assert.match(css, /\.voices-section::after\s*\{[^}]*right:\s*0;/s);
+});
+
+test('team section keeps a clearly marked photo swap point', async () => {
+  const html = await read('index.html');
+  assert.match(html, /TEAM PHOTO SWAP POINT/);
+  assert.match(html, /A photograph of the team will live here\./);
 });

@@ -35,7 +35,8 @@ node --test tests/*.test.mjs
 - Confirm accepted insurance language
 - Confirm English, Spanish, and Tagalog availability
 - Confirm each listed service and preferred terminology
-- Approve portrait use
+- Approve portrait use (the page intentionally uses only the single standing portrait)
+- Provide a team photograph for the marked swap point in the team section (`TEAM PHOTO SWAP POINT` comment in `index.html`)
 - Approve biography and music/community details
 - Approve direct patient quotations if added
 - Confirm scheduler URL and preferred primary conversion action
