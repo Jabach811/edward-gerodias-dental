@@ -2,14 +2,14 @@
 
 Capture date: 2026-07-13
 
-## Publish candidate
+## Publish approved
 
 ### dr-edward-gerodias-scheduler.png
 
 - Source: https://smilereminder.com/subfiles/48415/providers/36689d3c-f663-4e47-a300-071753131474.png
 - Context: Dr. Gerodias provider image served by his public Solutionreach scheduler
 - Apparent owner: Edward S. Gerodias, D.M.D. practice account
-- Status: Publish candidate; owner approval required before public launch
+- Status: Approved for use on the public practice website on 2026-07-13
 
 ## Reference only
 

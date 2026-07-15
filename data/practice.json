@@ -44,10 +44,11 @@
     "music": "Public profiles describe longtime service as a church pianist and organist."
   },
   "verification": {
-    "hours": "owner confirmation required",
-    "insurance": "owner confirmation required",
-    "languages": "owner confirmation required",
-    "portraitUsage": "owner approval required before publication",
-    "reviewQuotes": "direct quotation permission required before publication"
+    "sitePublication": "approved 2026-07-13",
+    "hours": "unconfirmed; omitted from public site",
+    "insurance": "unconfirmed; omitted from public site",
+    "languages": "unconfirmed; omitted from public site",
+    "portraitUsage": "approved for public site 2026-07-13",
+    "reviewQuotes": "unconfirmed; direct quotations omitted from public site"
   }
 }
