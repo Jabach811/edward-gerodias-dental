@@ -30,9 +30,16 @@
     {"name": "New-patient exams", "confirmedBy": "public scheduler"},
     {"name": "Cleanings and preventive care", "confirmedBy": "public scheduler"},
     {"name": "Fillings", "confirmedBy": "public scheduler"},
-    {"name": "Crowns", "confirmedBy": "public scheduler"},
-    {"name": "Orthodontics", "confirmedBy": "public scheduler"}
+    {"name": "Same-day crowns", "confirmedBy": "public scheduler (crowns); dentistsmodestoca.com listing (CEREC technology)"},
+    {"name": "Dental implants", "confirmedBy": "Yelp business listing"},
+    {"name": "Orthodontics", "confirmedBy": "public scheduler"},
+    {"name": "Teeth whitening", "confirmedBy": "Yelp business listing"},
+    {"name": "Emergency visits", "confirmedBy": "Yelp business listing"}
   ],
+  "financing": {
+    "name": "CareCredit",
+    "confirmedBy": "CareCredit provider locator (carecredit.com/doctor-locator)"
+  },
   "languages": [
     {"name": "English", "confirmationRequired": true},
     {"name": "Spanish", "confirmationRequired": true},
@@ -46,7 +53,9 @@
   "verification": {
     "hours": "owner confirmation required",
     "insurance": "owner confirmation required",
-    "languages": "owner confirmation required",
+    "languages": "listed on Yelp business page; owner confirmation still recommended",
+    "financing": "listed on CareCredit provider locator; owner confirmation still recommended",
+    "expandedServices": "implants, whitening, CEREC, emergency confirmed via Yelp and local directory listings; owner confirmation still recommended",
     "portraitUsage": "owner approval required before publication",
     "reviewQuotes": "direct quotation permission required before publication"
   }

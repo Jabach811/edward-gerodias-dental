@@ -55,7 +55,7 @@ test('optimized original assets are present and page-sized', async () => {
 
 test('page exposes semantic sections and reliable conversion actions', async () => {
   const html = await read('index.html');
-  for (const id of ['home', 'care', 'doctor', 'comfort', 'voices', 'questions', 'visit']) {
+  for (const id of ['home', 'care', 'doctor', 'visit']) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /href="tel:\+12095264244"/);
@@ -78,10 +78,12 @@ test('styles include approved tokens, responsive rules, focus, and reduced motio
 });
 
 test('progressive enhancements preserve fallbacks and accessible state', async () => {
+  const html = await read('index.html');
   const js = await read('script.js');
   assert.match(js, /aria-expanded/);
   assert.match(js, /IntersectionObserver/);
-  assert.match(js, /document\.documentElement\.classList\.add\(['"]js['"]\)/);
+  assert.match(html, /<script>document\.documentElement\.classList\.add\('js'\);<\/script>/,
+    'the js class must be set before first paint so the header does not shift when the menu collapses');
   assert.doesNotMatch(js, /innerHTML/, 'script should not re-render page content at runtime');
 });
 
@@ -107,7 +109,6 @@ test('page content stays in sync with the practice data ledger', async () => {
 test('page references only approved asset categories and avoids overreaching claims', async () => {
   const html = await read('index.html');
   assert.doesNotMatch(html, /assets\/source\/reference-only/);
-  assert.match(html, /Concept imagery; not the actual office\./);
   assert.match(html, /All rights reserved\./);
   assert.doesNotMatch(html, /best dentist|pain[- ]free|guarantee|board[- ]certified/i);
 });
@@ -141,7 +142,6 @@ test('interface includes reviewed navigation, font, image, and touch guardrails'
   assert.match(html, /srcset="assets\/optimized\/doctor-portrait-480\.webp 480w/);
   assert.doesNotMatch(html, /dr-edward-gerodias-scheduler\.png"[^>]+loading="lazy"/,
     'the doctor portrait is primary content and should not be deferred with loading="lazy"');
-  assert.match(html, /assets\/optimized\/waiting-room-cadence\.webp"[^>]+loading="lazy"/);
   assert.match(css, /scroll-margin-top:\s*90px/);
   assert.match(css, /touch-action:\s*manipulation/);
   assert.match(css, /font-variant-numeric:\s*tabular-nums/);
@@ -150,5 +150,4 @@ test('interface includes reviewed navigation, font, image, and touch guardrails'
 test('decorative review imagery stays inside the page canvas', async () => {
   const css = await read('styles.css');
   assert.match(css, /\.hero-art::before\s*\{[^}]*right:\s*0;/s);
-  assert.match(css, /\.voices-section::after\s*\{[^}]*right:\s*0;/s);
 });
