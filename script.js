@@ -1,41 +1,15 @@
-const toggle = document.querySelector('[data-menu-toggle]');
-const nav = document.querySelector('[data-nav]');
-const toggleLabel = toggle?.querySelector('.sr-only');
-
-const setMenuState = (open) => {
-  if (!toggle || !nav) return;
-  toggle.setAttribute('aria-expanded', String(open));
-  nav.classList.toggle('is-open', open);
-  if (toggleLabel) toggleLabel.textContent = open ? 'Close navigation' : 'Open navigation';
+const copy = {
+  en: {h: 'Book a visit', p: 'Call the office, or send a request online and the team will follow up.', b: 'Request an appointment', d: 'Directions'},
+  es: {h: 'Haga una cita', p: 'Nuestro equipo habla español. Llámenos o pida su cita en línea.', b: 'Pedir una cita', d: 'Cómo llegar'},
+  tl: {h: 'Magpa-schedule', p: 'Nagsasalita po ng Tagalog si Dr. Gerodias. Tumawag po kayo o mag-request online.', b: 'Mag-request ng appointment', d: 'Direksyon'}
 };
 
-const closeMenu = () => setMenuState(false);
+const card = document.querySelector('[data-langcard]');
 
-toggle?.addEventListener('click', () => {
-  setMenuState(toggle.getAttribute('aria-expanded') !== 'true');
-});
+const setLang = (lang) => {
+  card.querySelectorAll('[data-t]').forEach((el) => { el.textContent = copy[lang][el.dataset.t]; });
+  card.querySelectorAll('.switch button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.l === lang)));
+  card.lang = lang;
+};
 
-nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
-    closeMenu();
-    toggle.focus();
-  }
-});
-
-const revealItems = document.querySelectorAll('[data-reveal]');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if ('IntersectionObserver' in window && !reducedMotion) {
-  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  }), {threshold: .15});
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
+card.querySelectorAll('.switch button').forEach((button) => button.addEventListener('click', () => setLang(button.dataset.l)));

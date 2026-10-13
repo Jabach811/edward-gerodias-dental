@@ -36,6 +36,17 @@ Capture date: 2026-07-13
 - License: SIL Open Font License; full text in `assets/fonts/LICENSE-NEWSREADER.txt`
 - Status: Cleared for local embedding under the included license
 
+### Plus Jakarta Sans
+
+- Source: https://fonts.google.com/specimen/Plus+Jakarta+Sans (via the `@fontsource-variable/plus-jakarta-sans` 5.3.0 package)
+- Files: `plus-jakarta-sans-var.woff2` (Latin subset, variable weight 200-800)
+- License: SIL Open Font License; full text in `assets/fonts/LICENSE-PLUS-JAKARTA-SANS.txt`
+- Status: Cleared for local embedding under the included license
+
+## Storefront photo
+
+- `storefront.webp`, `storefront-900.webp`, `share.jpg` — made from `front of shop.png`, the practice storefront photo supplied for the redesign; owner approval required before public launch
+
 ## Generated originals
 
 - `doctor-portrait.png` — generated portrait of Dr. Gerodias (from the hero brainstorm); owner approval required before public launch
