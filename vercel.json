@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node --test tests/*.test.mjs && mkdir -p dist && cp index.html styles.css script.js dist/ && cp -r assets dist/assets",
+  "outputDirectory": "dist"
+}
