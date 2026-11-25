@@ -33,10 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Assemble public site
-        run: |
-          mkdir dist
-          cp index.html styles.css script.js dist/
-          cp -r assets dist/assets
+        run: sh scripts/build.sh
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
