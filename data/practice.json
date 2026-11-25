@@ -18,7 +18,8 @@
   },
   "appointments": {
     "url": "https://schedule.solutionreach.com/scheduling/subscriber/48415/scheduler-basic",
-    "label": "Request an appointment"
+    "label": "Request an appointment",
+    "replyTime": "Next business day (owner email 2026-11-24)"
   },
   "reviews": {
     "average": 4.98,
@@ -27,36 +28,79 @@
     "sourceUrl": "https://schedule.solutionreach.com/scheduling/subscriber/48415/scheduler-basic"
   },
   "services": [
-    {"name": "New-patient exams", "confirmedBy": "public scheduler"},
-    {"name": "Cleanings and preventive care", "confirmedBy": "public scheduler"},
-    {"name": "Fillings", "confirmedBy": "public scheduler"},
-    {"name": "Same-day crowns", "confirmedBy": "public scheduler (crowns); dentistsmodestoca.com listing (CEREC technology)"},
-    {"name": "Dental implants", "confirmedBy": "Yelp business listing"},
-    {"name": "Orthodontics", "confirmedBy": "public scheduler"},
-    {"name": "Teeth whitening", "confirmedBy": "Yelp business listing"},
-    {"name": "Emergency visits", "confirmedBy": "Yelp business listing"}
+    {
+      "name": "New-patient exams",
+      "confirmedBy": "public scheduler"
+    },
+    {
+      "name": "Cleanings and preventive care",
+      "confirmedBy": "public scheduler"
+    },
+    {
+      "name": "Fillings",
+      "confirmedBy": "public scheduler"
+    },
+    {
+      "name": "Same-day crowns",
+      "confirmedBy": "public scheduler (crowns); dentistsmodestoca.com listing (CEREC technology)"
+    },
+    {
+      "name": "Dental implants",
+      "confirmedBy": "Yelp business listing"
+    },
+    {
+      "name": "Orthodontics",
+      "confirmedBy": "public scheduler"
+    },
+    {
+      "name": "Teeth whitening",
+      "confirmedBy": "Yelp business listing"
+    },
+    {
+      "name": "Emergency visits",
+      "confirmedBy": "Yelp business listing"
+    }
   ],
   "financing": {
     "name": "CareCredit",
     "confirmedBy": "CareCredit provider locator (carecredit.com/doctor-locator)"
   },
   "languages": [
-    {"name": "English", "confirmationRequired": true},
-    {"name": "Spanish", "confirmationRequired": true},
-    {"name": "Tagalog", "confirmationRequired": true}
+    {
+      "name": "English",
+      "confirmedBy": "owner email 2026-11-24"
+    },
+    {
+      "name": "Spanish",
+      "confirmedBy": "owner email 2026-11-24"
+    },
+    {
+      "name": "Tagalog",
+      "confirmedBy": "owner email 2026-11-24"
+    }
   ],
   "story": {
-    "education": "University of the East Ramon Magsaysay Memorial Medical Center",
-    "community": "Public profiles describe volunteer dentistry through CDA Cares.",
-    "music": "Public profiles describe longtime service as a church pianist and organist."
+    "practiceSince": "March 2002, private practice in Modesto",
+    "education": "Doctor of Medicine in Dentistry, University of the East Ramon Magsaysay Memorial Medical Center, 1990",
+    "training": "Orthodontics (Progressive Orthodontics; McGann Postgraduate School of Dentistry), implants (Sacramento Implant Continuum 2012), TMJ/pain management (McGann 2014)",
+    "music": "Volunteer organist, St. Joseph's Catholic Church, Modesto, since 2003",
+    "memberships": "ADA, CDA, Stanislaus Dental Society, American Guild of Organists (Sacramento)",
+    "source": "owner Facebook profile screenshots, email 2026-11-24",
+    "notConfirmed": "CDA Cares volunteer work"
   },
   "verification": {
-    "hours": "owner confirmation required",
-    "insurance": "owner confirmation required",
-    "languages": "listed on Yelp business page; owner confirmation still recommended",
-    "financing": "listed on CareCredit provider locator; owner confirmation still recommended",
-    "expandedServices": "implants, whitening, CEREC, emergency confirmed via Yelp and local directory listings; owner confirmation still recommended",
-    "portraitUsage": "owner approval required before publication",
+    "owner": "Owner answered hours, insurance, languages, services, portrait, bio, ratings, and booking flow by email 2026-11-24",
+    "stillOpen": "domain purchase; whether dentistsmodestoca.com is his; CDA Cares mention",
     "reviewQuotes": "direct quotation permission required before publication"
+  },
+  "hours": {
+    "days": "Tuesday to Friday",
+    "open": "08:00",
+    "close": "17:00",
+    "confirmedBy": "owner email 2026-11-24"
+  },
+  "insurance": {
+    "accepted": "All PPO dental insurance",
+    "confirmedBy": "owner email 2026-11-24"
   }
 }
